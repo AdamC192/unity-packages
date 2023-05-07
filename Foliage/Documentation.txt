@@ -1,0 +1,33 @@
+Thanks for considering my package!
+
+This package was my first attempt at creating tools for unity and is very crude. It is unlikely but more updates may come in the future.
+
+Please feel free to suggest any changes or upgrades.
+
+I would appreciate if you credit me in any reuploads of this product!
+
+HOW TO USE:
+
+Navigate to "Window/FolageGenerator" and open it (you are able to change the directory in the script).
+
+Once opened assign an object to cover in foliage, currenly you can only do square planes.
+
+Now assign the foliages properties,
+ - Foliage Density (be careful with this value as it can get dense easily)
+ - Foliage Size, assign a min and a max size for the foliage.
+ 
+Now you can select "Add Foliage Mesh" and assign a mesh (you can have multiple meshes here)
+
+Generate the foliage by clicking the "Generate Folage" button
+and remove the last placed foliage bundle by clicking the "Remove Foliage" button
+if you cannot remove the foliage you can locate the ground object in the heirchy and
+delete the child "Grass" to remove all foliage.
+
+Randomizers:
+
+Click add randomize script to add a randomizer to the ground object, if you open the ground object you will see a class
+displaying some variables that you can change, adjusting these will diffrentiate the foliage details.
+
+When you press play, the foliage should generate randomly on the ground object and remove when you leave play mode.
+
+Clicking remove randomize script will remove the randomizer.
