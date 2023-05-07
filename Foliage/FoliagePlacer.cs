@@ -29,6 +29,11 @@ public class FoliagePlacer : MonoBehaviour
 
         grassObject.transform.SetParent(transform, true);
 
+        if (foliageMeshes == null || foliageMeshes.Length == 0)
+        {
+            return;
+        }
+
         for (int i = 0; i < numInstances; i++)
         {
             Vector3 position = center + new Vector3(Random.Range(-size / 2f, size / 2f), 0f, Random.Range(-size / 2f, size / 2f));
@@ -38,4 +43,5 @@ public class FoliagePlacer : MonoBehaviour
             foliage.transform.parent = grassObject.transform;
         }
     }
+
 }
