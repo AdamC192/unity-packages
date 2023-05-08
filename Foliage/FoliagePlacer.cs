@@ -36,12 +36,36 @@ public class FoliagePlacer : MonoBehaviour
 
         for (int i = 0; i < numInstances; i++)
         {
-            Vector3 position = center + new Vector3(Random.Range(-size / 2f, size / 2f), 0f, Random.Range(-size / 2f, size / 2f));
+            float x = Random.Range(-size / 2f, size / 2f);
+            float z = Random.Range(-size / 2f, size / 2f);
+
+            // Adjust x and z based on the size of the plane
+            if (x < -bounds.size.x / 2f)
+            {
+                x = -bounds.size.x / 2f;
+            }
+            else if (x > bounds.size.x / 2f)
+            {
+                x = bounds.size.x / 2f;
+            }
+
+            if (z < -bounds.size.z / 2f)
+            {
+                z = -bounds.size.z / 2f;
+            }
+            else if (z > bounds.size.z / 2f)
+            {
+                z = bounds.size.z / 2f;
+            }
+
+            Vector3 position = center + new Vector3(x, 0f, z);
+
             GameObject foliage = Instantiate(foliageMeshes[Random.Range(0, foliageMeshes.Length)], position, Quaternion.Euler(Random.Range(-10f, 10f), Random.Range(0f, 360f), 0f));
             float scale = Random.Range(minSize, maxSize);
             foliage.transform.localScale = new Vector3(scale, scale, scale);
             foliage.transform.parent = grassObject.transform;
         }
     }
+
 
 }
